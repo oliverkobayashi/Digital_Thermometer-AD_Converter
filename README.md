@@ -166,12 +166,6 @@ while(1) {
 
 ---
 
-# Resultados obtidos
-
-Como resultado final do desenvolvimento, obteve-se um display *LCD* que exibe a temperatura do sensor ***LM35*** a medida que o valor analógico no mecanismo era alterado, obseravava-se uma alteração diretamente proporcional na temperatura medida, como era aspirado na documentação do projeto.
-
----
-
 # Simulações
 
 No ***SimulIDE***, foi possível contruir o modelo e executar a simulação da operação do circuito em questão.
@@ -187,3 +181,7 @@ Ademais, foi possível executar o código de funcionamento do sistema no softwar
 </p>
 
 Assim, é razoável atestar o correto funcionamento do circuito de obtenção da temperatura com o sensor ***LM35*** e o display *LCD*.
+
+# Resultados obtidos
+
+Como resultado final do desenvolvimento, obteve-se um display *LCD* que exibe a temperatura do sensor ***LM35*** a medida que o valor analógico no mecanismo era alterado, obseravava-se uma alteração diretamente proporcional na temperatura medida, como era aspirado na documentação do projeto.
