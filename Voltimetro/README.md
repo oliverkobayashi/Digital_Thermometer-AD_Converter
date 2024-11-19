@@ -1,4 +1,6 @@
-# Contexto do projeto
+# Voltímetro Digital com Microcontrolador *PIC*
+
+## Contexto do projeto
 
 Este projeto segue as diretrizes do desafio de desenvolver um voltímetro digital para a disciplina ***SEL0614 - Aplicações de Microprocessadores*** como desafio.
 
@@ -8,9 +10,9 @@ O projeto implementa:
 * Escalonamento para exibir valores entre 0 e 20V no display *LCD*.
 * Uso de bibliotecas do ***MikroC PRO*** for ***PIC*** para simplificar a configuração e interface com o hardware.
 
-# Explicação do Código
+## Explicação do Código
 
-## Cálculo do divisor de tensão
+### Cálculo do divisor de tensão
 
 Tomando a relação entre a tensão de entrada e de saída no circuito como:
 
@@ -39,7 +41,7 @@ V_{out_{max}} & = 20 \times 0.25 = 5V
 \end{aligned}
 $$
 
-## Configuração dos pinos do *LCD*
+### Configuração dos pinos do *LCD*
 ```C
 sbit LCD_RS at LATB4_bit;
 sbit LCD_EN at LATB5_bit;
@@ -57,7 +59,7 @@ sbit LCD_D7_Direction at TRISB3_bit;
 ```
 Configura os pinos digitais do PORTB para controlar o display LCD no modo de 4 bits, utilizando as bibliotecas do MikroC PRO for PIC. Esta etapa é crucial para a interface com o hardware do LCD.
 
-## Inicialização do programa
+### Inicialização do programa
 ```C
 void main() {
     unsigned int adc_value;
@@ -71,7 +73,7 @@ void main() {
 ```
 Configurações iniciais para preparar o ADC e o LCD. É importante garantir que o ADC_Init seja chamado antes de usar funções relacionadas ao ADC.
 
-## Loop principal
+### Loop principal
 ```C
     while(1) {
         adc_value = ADC_Get_Sample(0);              // Lê o valor do canal AN0
@@ -80,7 +82,7 @@ Configurações iniciais para preparar o ADC e o LCD. É importante garantir que
 ```
 O loop principal realiza leituras contínuas do canal ADC configurado no pino AN0. A conversão de tensão é escalada para refletir a faixa de 0 a 20V, simulando um voltímetro.
 
-## Formatação e exibição no LCD
+### Formatação e exibição no LCD
 ```C
         text[0] = (voltage / 10000) + '0';           // Dezena de volts
         text[1] = ((voltage / 1000) % 10) + '0';     // Unidade de volts
@@ -94,7 +96,7 @@ O loop principal realiza leituras contínuas do canal ADC configurado no pino AN
 ```
 A formatação do valor lido é feita manualmente, convertendo o resultado em caracteres ASCII para exibição no LCD, com precisão até uma casa decimal.
 
-## Controle de tempo
+### Controle de tempo
 ```C
         Delay_ms(20);  // Aguarda 20 ms
 ```
@@ -102,7 +104,7 @@ Um pequeno atraso é inserido para estabilizar a leitura e evitar flutuações v
 
 ---
 
-# Simulações
+## Simulações
 
 Com a utilização do software ***SimulIDE***, tem-se o **diagrama esquemático** do circuito do voltímetro digital.
 
