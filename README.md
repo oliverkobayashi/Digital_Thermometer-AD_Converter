@@ -8,6 +8,8 @@
 
 Este repositório contém o projeto para a disciplina de **Aplicação de Microprocessadores (SEL0614)**, no qual será desenvolvido um termômetro digital com o sensor LM35 e um conversor analógico-digital no ***PIC18F4550*** em linguagem **C**.
 
+* **Observação**: O código e a documentação do desafio estão armazenados no diretório `Voltimetro`.
+
 ---
 
 # Conceitos utilizados
@@ -128,7 +130,7 @@ while(1) {
     A valor analógico obtido é convertido para um valor digital com **1024 níveis**, com valores no intervalo **[0, 1024]**, com valores de temperaturas possíveis no intervalo **[0, 100]**, proporcional à temperatura do sensor ***LM35***. Assim, a equação de obtenção da temperatura é dada por:
 
     $$
-        Temperatura = \frac{Valor\_ADC}{1023} \times 100
+        Temperatura = \frac{Valor\_ ADC}{1023} \times 100
     $$
 
     Desse modo, no código, a temperatura é obtida a partir de:
@@ -183,3 +185,5 @@ Ademais, foi possível executar o código de funcionamento do sistema no softwar
 <p align="center">
   <img width="800" height="auto" src="assets/operation.gif" alt="Circuito operando">
 </p>
+
+Assim, é razoável atestar o correto funcionamento do circuito de obtenção da temperatura com o sensor ***LM35*** e o display *LCD*.
