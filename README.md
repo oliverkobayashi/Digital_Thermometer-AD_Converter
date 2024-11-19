@@ -130,7 +130,7 @@ while(1) {
     A valor analógico obtido é convertido para um valor digital com **1024 níveis**, com valores no intervalo **[0, 1024]**, com valores de temperaturas possíveis no intervalo **[0, 100]**, proporcional à temperatura do sensor ***LM35***. Assim, a equação de obtenção da temperatura é dada por:
 
     $$
-        Temperatura = \frac{Valor\_ ADC}{1023} \times 100
+        Temperatura = \frac{Valor_{ADC}}{1023} \times 100
     $$
 
     Desse modo, no código, a temperatura é obtida a partir de:
