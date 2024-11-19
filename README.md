@@ -128,7 +128,7 @@ while(1) {
     A valor analógico obtido é convertido para um valor digital com **1024 níveis**, com valores no intervalo **[0, 1024]**, com valores de temperaturas possíveis no intervalo **[0, 100]**, proporcional à temperatura do sensor ***LM35***. Assim, a equação de obtenção da temperatura é dada por:
 
     $$
-        Temperatura = \frac{Valor\_ADC}{1023} \cdot 100
+        Temperatura = \frac{Valor\_ADC}{1023} \times 100
     $$
 
     Desse modo, no código, a temperatura é obtida a partir de:
@@ -166,9 +166,11 @@ while(1) {
 
 # Resultados obtidos
 
+Como resultado final do desenvolvimento, obteve-se um display *LCD* que exibe a temperatura do sensor ***LM35*** a medida que o valor analógico no mecanismo era alterado, obseravava-se uma alteração diretamente proporcional na temperatura medida, como era aspirado na documentação do projeto.
+
 ---
 
-# Simulaçãoes
+# Simulações
 
 No ***SimulIDE***, foi possível contruir o modelo e executar a simulação da operação do circuito em questão.
 
